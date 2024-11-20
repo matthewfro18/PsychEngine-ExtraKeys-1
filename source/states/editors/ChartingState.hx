@@ -137,6 +137,8 @@ class ChartingState extends MusicBeatState
 	var vocals:FlxSound = null;
 	var opponentVocals:FlxSound = null;
 
+	var shagVoice:Bool;
+
 	var leftIcon:HealthIcon;
 	var rightIcon:HealthIcon;
 
@@ -211,6 +213,7 @@ class ChartingState extends MusicBeatState
 			addSection();
 			PlayState.SONG = _song;
 		}
+		shagVoice = PlayState.shaggyVoice;
 
 		if (_song.mania == null || (_song.mania > 8 || _song.mania < 0))
 			_song.mania = 3;
@@ -1448,6 +1451,7 @@ class ChartingState extends MusicBeatState
 		{
 			var playerVocals = Paths.voices(currentSongName, (characterData.vocalsP1 == null || characterData.vocalsP1.length < 1) ? 'Player' : characterData.vocalsP1);
 			vocals.loadEmbedded(playerVocals != null ? playerVocals : Paths.voices(currentSongName));
+		        vocals = new FlxSound().loadEmbedded(Paths.voices(currentSongName, shagVoice ? "Shaggy" : ""));
 		}
 		vocals.autoDestroy = false;
 		FlxG.sound.list.add(vocals);
