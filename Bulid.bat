@@ -15,6 +15,7 @@ haxelib install linc_luajit
 haxelib install hscript
 haxelib install tjson
 haxelib install SScript 6.1.80
+haxelib install flxanimate
 haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
