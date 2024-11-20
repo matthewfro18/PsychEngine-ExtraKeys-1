@@ -14,7 +14,7 @@ haxelib install hxCodec 2.5.1
 haxelib install linc_luajit
 haxelib install hscript
 haxelib install tjson
-haxelib install SScript 6.1.80
+haxelib git SScript https://github.com/x8c8r/SScript-7.7.0.git
 haxelib install flxanimate
 haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
