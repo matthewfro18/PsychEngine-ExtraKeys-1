@@ -225,6 +225,26 @@ class Note extends FlxSprite
 					hitsoundChartEditor = false;
 				case 'Alt Animation':
 					animSuffix = '-alt';
+				case 'phone-alt':
+					reloadNote('NOTE_phone');
+					rgbShader.r = null;
+					rgbShader.g = null;
+					rgbShader.b = null;
+				case 'shape':
+					reloadNote('NOTE_assets_Shape');
+					rgbShader.r = null;
+					rgbShader.g = null;
+					rgbShader.b = null;
+				case 'phone':
+					reloadNote('NOTE_assets_Shape');
+					rgbShader.r = null;
+					rgbShader.g = null;
+					rgbShader.b = null;
+				case 'phone-zardy':
+					reloadNote('NOTE_assets_Shape');
+					rgbShader.r = null;
+					rgbShader.g = null;
+					rgbShader.b = null;
 				case 'No Animation':
 					noAnimation = true;
 					noMissAnimation = true;
