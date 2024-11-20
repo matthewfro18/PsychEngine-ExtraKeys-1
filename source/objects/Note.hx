@@ -84,8 +84,8 @@ class Note extends FlxSprite
 	public static var SUSTAIN_SIZE:Int = 44;
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var colArray:Array<String> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-	public static var colArrayAlt:Array<String> = ['purple', 'blue', 'green', 'red', 'white', 'yellow', 'violet', 'black', 'dark'];
-	public static var pressArrayAlt:Array<String> = ['left', 'down', 'up', 'right', 'white', 'yellow', 'violet', 'black', 'dark'];
+	public static var colArrayAlt:Array<String> = [''purple', 'blue', 'green', 'red', 'white', 'yellow', 'pink', 'turq', 'emerald', 'lightred', 'yellow', 'violet', 'black', 'dark';
+	public static var pressArrayAlt:Array<String> = ['left', 'down', 'up', 'right', 'white', 'yellow', 'pink', 'turq', 'emerald', 'lightred', 'yellow', 'violet', 'black', 'dark'];
 	public static var defaultNoteSkin(default, never):String = 'noteSkins/NOTE_assets';
 
 	public static var scales:Array<Float> = [0.7, 0.7, 0.7, 0.7, 0.65, 0.6, 0.55, 0.5, 0.46];
@@ -271,7 +271,7 @@ class Note extends FlxSprite
 			if (Main.mania != 0) x += Note.swidths[Main.mania] * (noteData % (Main.mania+1));
 			if(!isSustainNote && noteData < Main.mania+1) { //Doing this 'if' check to fix the warnings on Senpai songs
 				var animToPlay:String = '';
-				animToPlay = colArray[gfxIndex[Main.mania][noteData]];
+				animToPlay = colArrayAlt[gfxIndex[Main.mania][noteData]];
 				animation.play(animToPlay + 'Scroll');
 			}
 		}
@@ -291,7 +291,7 @@ class Note extends FlxSprite
 			offsetX += width / 2;
 			copyAngle = false;
 
-			animation.play(colArray[gfxIndex[Main.mania][noteData]] + 'holdend');
+			animation.play(colArrayAlt[gfxIndex[Main.mania][noteData]] + 'holdend');
 
 			updateHitbox();
 
@@ -302,7 +302,7 @@ class Note extends FlxSprite
 
 			if (prevNote.isSustainNote)
 			{
-				prevNote.animation.play(colArray[gfxIndex[Main.mania][prevNote.noteData]] + 'hold');
+				prevNote.animation.play(colArrayAlt[gfxIndex[Main.mania][prevNote.noteData]] + 'hold');
 
 				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05;
 				if(createdFrom != null && createdFrom.songSpeed != null) prevNote.scale.y *= createdFrom.songSpeed;
@@ -427,7 +427,7 @@ class Note extends FlxSprite
 	}
 
 	function loadNoteAnims() {
-		var playAnim:String = colArray[gfxIndex[Main.mania][noteData]];
+		var playAnim:String = colArrayAlt[gfxIndex[Main.mania][noteData]];
 		var playAnimAlt:String = colArrayAlt[gfxIndex[Main.mania][noteData]];
 		if (isSustainNote)
 		{
